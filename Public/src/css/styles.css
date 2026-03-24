@@ -75,7 +75,7 @@ h1, h2, h3, .font-serif {
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), border 0.3s ease, background-color 0.3s ease;
     display: none;
 }
 
@@ -119,20 +119,36 @@ h1, h2, h3, .font-serif {
 }
 
 .slider-btn {
-    background-color: rgba(61, 43, 31, 0.8);
-    color: #fdf0d5;
-    width: 50px;
-    height: 50px;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-color: var(--deep-brown);
+    color: white;
     border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 10005; /* Higher than cursor (10000) so it's not "covered" */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .slider-btn:hover {
-    background-color: var(--warm-gold);
+    background-color: var(--copper);
     transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure the group/slider container has overflow visible to show buttons outside */
+.group\/slider {
+    overflow: visible !important;
+}
+
+/* Custom Cursor - Ensure it doesn't block any interaction */
+#cursor, #cursor-follower {
+    pointer-events: none !important;
 }
 
 /* Chat Button Animation */

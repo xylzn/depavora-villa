@@ -34,40 +34,6 @@ AOS.init({
     offset: 100,
 });
 
-// Mobile Sidebar Toggle
-const menuBtn = document.getElementById('menu-btn');
-const mobileSidebar = document.getElementById('mobile-sidebar');
-const sidebarOverlay = document.getElementById('sidebar-overlay');
-const closeSidebar = document.getElementById('close-sidebar');
-
-if (menuBtn && mobileSidebar && sidebarOverlay) {
-    const toggleSidebar = (show) => {
-        if (show) {
-            sidebarOverlay.classList.remove('hidden');
-            setTimeout(() => {
-                sidebarOverlay.classList.add('opacity-100');
-                mobileSidebar.classList.remove('translate-x-full');
-            }, 10);
-            document.body.style.overflow = 'hidden';
-        } else {
-            sidebarOverlay.classList.remove('opacity-100');
-            mobileSidebar.classList.add('translate-x-full');
-            setTimeout(() => {
-                sidebarOverlay.classList.add('hidden');
-            }, 300);
-            document.body.style.overflow = '';
-        }
-    };
-
-    menuBtn.addEventListener('click', () => toggleSidebar(true));
-    closeSidebar.addEventListener('click', () => toggleSidebar(false));
-    sidebarOverlay.addEventListener('click', () => toggleSidebar(false));
-
-    // Close sidebar on link click
-    document.querySelectorAll('.sidebar-link').forEach(link => {
-        link.addEventListener('click', () => toggleSidebar(false));
-    });
-}
 
 // Carousel/Slider Logic
 function setupCarousel(carouselId, prevBtnId, nextBtnId) {
@@ -119,63 +85,106 @@ function setupCarousel(carouselId, prevBtnId, nextBtnId) {
     carousel.dispatchEvent(new Event('scroll'));
 }
 
-// Initialize Carousels when DOM is loaded
+// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Carousels
     setupCarousel('suites-carousel', 'suites-prev', 'suites-next');
     setupCarousel('fac-carousel', 'fac-prev', 'fac-next');
     setupCarousel('pkg-carousel', 'pkg-prev', 'pkg-next');
-});
 
-// Custom Cursor Logic
-const cursor = document.getElementById('cursor');
-const follower = document.getElementById('cursor-follower');
+    // Sidebar
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const closeSidebar = document.getElementById('close-sidebar');
 
-if (cursor && follower) {
-    let posX = 0;
-    let posY = 0;
+    if (menuBtn && mobileSidebar && sidebarOverlay) {
+        const toggleSidebar = (show) => {
+            if (show) {
+                sidebarOverlay.classList.remove('hidden');
+                setTimeout(() => {
+                    sidebarOverlay.classList.add('opacity-100');
+                    mobileSidebar.classList.remove('translate-x-full');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                sidebarOverlay.classList.remove('opacity-100');
+                mobileSidebar.classList.add('translate-x-full');
+                setTimeout(() => {
+                    sidebarOverlay.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = '';
+            }
+        };
 
-    let currentScale = 1;
+        menuBtn.addEventListener('click', () => toggleSidebar(true));
+        closeSidebar.addEventListener('click', () => toggleSidebar(false));
+        sidebarOverlay.addEventListener('click', () => toggleSidebar(false));
 
-    document.addEventListener('mousemove', (e) => {
-        posX = e.clientX;
-        posY = e.clientY;
-
-        // Small dot follows immediately
-        let dotScale = 1;
-        if (currentScale === 1.5) dotScale = 0.5; // mousedown
-        
-        cursor.style.transform = `translate3d(${posX - 4}px, ${posY - 4}px, 0) scale(${dotScale})`;
-        
-        // Large circle follows with a slight delay
-        follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(${currentScale})`;
-    });
-
-    document.addEventListener('mousedown', () => {
-        currentScale = 1.5;
-        cursor.style.transform = `translate3d(${posX - 4}px, ${posY - 4}px, 0) scale(0.5)`;
-        follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(1.5)`;
-        follower.style.backgroundColor = 'rgba(121, 85, 72, 0.1)';
-    });
-
-    document.addEventListener('mouseup', () => {
-        currentScale = 1;
-        cursor.style.transform = `translate3d(${posX - 4}px, ${posY - 4}px, 0) scale(1)`;
-        follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(1)`;
-        follower.style.backgroundColor = 'transparent';
-    });
-
-    // Add hover effect for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .group, .card-hover');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            currentScale = 2;
-            follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(2)`;
-            follower.style.backgroundColor = 'rgba(121, 85, 72, 0.1)';
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', () => toggleSidebar(false));
         });
-        el.addEventListener('mouseleave', () => {
+    }
+
+    // Custom Cursor Logic
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursor-follower');
+
+    if (cursor && follower) {
+        let posX = 0;
+        let posY = 0;
+        let mouseX = 0;
+        let mouseY = 0;
+
+        let currentScale = 1;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Use requestAnimationFrame for smoother cursor
+        function animateCursor() {
+            // Smooth movement for follower
+            posX += (mouseX - posX) * 0.15;
+            posY += (mouseY - posY) * 0.15;
+
+            cursor.style.transform = `translate3d(${mouseX - 4}px, ${mouseY - 4}px, 0)`;
+            follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(${currentScale})`;
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        document.addEventListener('mousedown', () => {
+            currentScale = 0.8;
+            follower.style.backgroundColor = 'rgba(121, 85, 72, 0.2)';
+        });
+
+        document.addEventListener('mouseup', () => {
             currentScale = 1;
-            follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(1)`;
             follower.style.backgroundColor = 'transparent';
         });
-    });
-}
+
+        // Add hover effect for interactive elements
+        function updateHoverEffects() {
+            const interactiveElements = document.querySelectorAll('a, button, .slider-btn, .card-hover');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    currentScale = 1.8;
+                    follower.style.backgroundColor = 'rgba(121, 85, 72, 0.1)';
+                    // If it's a slider btn, maybe make the cursor even more subtle
+                    if (el.classList.contains('slider-btn')) {
+                        follower.style.borderStyle = 'dashed';
+                    }
+                });
+                el.addEventListener('mouseleave', () => {
+                    currentScale = 1;
+                    follower.style.backgroundColor = 'transparent';
+                    follower.style.borderStyle = 'solid';
+                });
+            });
+        }
+        updateHoverEffects();
+    }
+});
