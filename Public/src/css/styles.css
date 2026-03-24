@@ -1,16 +1,17 @@
 :root {
-    --deep-wood: #3d2b1f;
-    --warm-brown: #5d4037;
-    --soft-wood: #8d6e63;
-    --cozy-cream: #fdf0d5; /* Deeper Warm Cream */
-    --warm-gold: #c6a482;
+    --deep-brown: #532D1c; /* BrownDer */
+    --copper: #876635; /* Copper */
+    --nutty-brown: #583924; /* NuttyBrown */
+    --withered-leaves: #c29666; /* Withered Leaves */
+    --golden-chestnut: #68621F; /* Golden Chestnut */
+    --cozy-cream: #fdf0d5; 
     --forest-green: #2e352f;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--cozy-cream);
-    color: #3e2723;
+    color: var(--nutty-brown);
 }
 
 h1, h2, h3, .font-serif {
@@ -19,9 +20,9 @@ h1, h2, h3, .font-serif {
 
 .bg-nature-green { background-color: var(--forest-green); }
 .text-nature-green { color: var(--forest-green); }
-.bg-rustic-brown { background-color: var(--deep-wood); }
-.text-rustic-brown { color: var(--deep-wood); }
-.border-rustic-brown { border-color: var(--warm-brown); }
+.bg-rustic-brown { background-color: var(--deep-brown); }
+.text-rustic-brown { color: var(--deep-brown); }
+.border-rustic-brown { border-color: var(--nutty-brown); }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -33,14 +34,14 @@ h1, h2, h3, .font-serif {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--warm-brown);
+    background: var(--copper);
     border-radius: 4px;
 }
 
 /* Fixed Navbar Blur */
 .nav-blur {
     backdrop-filter: blur(12px);
-    background-color: rgba(253, 240, 213, 0.98); /* More solid cozy-cream */
+    background-color: rgba(245, 230, 202, 0.98); /* Warmer background for navbar */
 }
 
 /* Card Hover Effects */
@@ -50,14 +51,14 @@ h1, h2, h3, .font-serif {
 
 .card-hover:hover {
     transform: translateY(-8px);
-    box-shadow: 0 30px 60px -12px rgba(78, 52, 46, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 30px 60px -12px rgba(88, 57, 36, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.2);
 }
 
 /* Custom Cursor */
 #cursor {
     width: 8px;
     height: 8px;
-    background-color: var(--warm-brown);
+    background-color: var(--copper);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
@@ -69,7 +70,7 @@ h1, h2, h3, .font-serif {
 #cursor-follower {
     width: 40px;
     height: 40px;
-    border: 1px solid var(--warm-brown);
+    border: 1px solid var(--copper);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
@@ -132,4 +133,18 @@ h1, h2, h3, .font-serif {
 .slider-btn:hover {
     background-color: var(--warm-gold);
     transform: translateY(-50%) scale(1.1);
+}
+
+/* Chat Button Animation */
+@keyframes pulse-soft {
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+    50% { transform: scale(1.05); box-shadow: 0 10px 15px -3px rgba(198, 164, 130, 0.4), 0 4px 6px -2px rgba(198, 164, 130, 0.2); }
+}
+
+.chat-btn-anim {
+    animation: pulse-soft 2s infinite ease-in-out;
+}
+
+.chat-btn-anim:hover {
+    animation-play-state: paused;
 }

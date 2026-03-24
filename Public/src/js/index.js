@@ -3,21 +3,24 @@ tailwind.config = {
     theme: {
         extend: {
             colors: {
-                nature: '#2e352f',
-                rustic: '#3d2b1f',
-                cream: '#fdf0d5',
-                wood: '#c6a482',
+                rustic: '#532D1c', // BrownDer
+                copper: '#876635', // Copper
+                nutty: '#583924',  // NuttyBrown
+                leaves: '#c29666', // Withered Leaves
+                chestnut: '#68621F', // Golden Chestnut
+                cream: '#fdf0d5', // Warm Cream
+                'warm-bg': '#f5e6ca', // Even warmer background
                 brown: {
                     50: '#fdf0d5',
                     100: '#f5e6ca',
-                    200: '#e1caaa',
-                    300: '#c6a482',
-                    400: '#a1887f',
-                    500: '#8d6e63',
-                    600: '#795548',
-                    700: '#5d4037',
-                    800: '#4e342e',
-                    900: '#3d2b1f',
+                    200: '#c29666', // Withered Leaves
+                    300: '#876635', // Copper
+                    400: '#68621F', // Golden Chestnut
+                    500: '#583924', // NuttyBrown
+                    600: '#532D1c', // BrownDer
+                    700: '#3d2b1f',
+                    800: '#2d1b0f',
+                    900: '#1d0b00',
                 }
             }
         }
@@ -118,6 +121,7 @@ function setupCarousel(carouselId, prevBtnId, nextBtnId) {
 
 // Initialize Carousels when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    setupCarousel('suites-carousel', 'suites-prev', 'suites-next');
     setupCarousel('fac-carousel', 'fac-prev', 'fac-next');
     setupCarousel('pkg-carousel', 'pkg-prev', 'pkg-next');
 });
