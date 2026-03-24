@@ -77,8 +77,10 @@ function setupCarousel(carouselId, prevBtnId, nextBtnId) {
     const getScrollAmount = () => {
         const item = carousel.querySelector('.carousel-item');
         if (!item) return 0;
-        // Scroll by the width of one item + the gap
-        return item.offsetWidth + 24; // 24px is the gap-6/gap-8 (approx)
+        // Get actual width including margin/gap if any
+        const style = window.getComputedStyle(carousel);
+        const gap = parseInt(style.gap) || 0;
+        return item.offsetWidth + gap;
     };
 
     nextBtn.addEventListener('click', () => {
@@ -128,42 +130,48 @@ if (cursor && follower) {
     let posX = 0;
     let posY = 0;
 
+    let currentScale = 1;
+
     document.addEventListener('mousemove', (e) => {
         posX = e.clientX;
         posY = e.clientY;
 
         // Small dot follows immediately
-        cursor.style.transform = `translate3d(${posX - 4}px, ${posY - 4}px, 0)`;
+        let dotScale = 1;
+        if (currentScale === 1.5) dotScale = 0.5; // mousedown
         
-        // Large circle follows with a slight delay (CSS transition handles this)
-        follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0)`;
+        cursor.style.transform = `translate3d(${posX - 4}px, ${posY - 4}px, 0) scale(${dotScale})`;
+        
+        // Large circle follows with a slight delay
+        follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(${currentScale})`;
     });
 
     document.addEventListener('mousedown', () => {
+        currentScale = 1.5;
         cursor.style.transform = `translate3d(${posX - 4}px, ${posY - 4}px, 0) scale(0.5)`;
         follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(1.5)`;
         follower.style.backgroundColor = 'rgba(121, 85, 72, 0.1)';
     });
 
     document.addEventListener('mouseup', () => {
+        currentScale = 1;
         cursor.style.transform = `translate3d(${posX - 4}px, ${posY - 4}px, 0) scale(1)`;
         follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(1)`;
         follower.style.backgroundColor = 'transparent';
     });
 
     // Add hover effect for interactive elements
-    const links = document.querySelectorAll('a, button, .group');
-    links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            follower.style.transform += ' scale(2)';
-            follower.style.borderColor = '#b08968';
-            follower.style.backgroundColor = 'rgba(176, 137, 104, 0.1)';
-            cursor.style.backgroundColor = '#b08968';
+    const interactiveElements = document.querySelectorAll('a, button, .group, .card-hover');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            currentScale = 2;
+            follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(2)`;
+            follower.style.backgroundColor = 'rgba(121, 85, 72, 0.1)';
         });
-        link.addEventListener('mouseleave', () => {
-            follower.style.borderColor = '#795548';
+        el.addEventListener('mouseleave', () => {
+            currentScale = 1;
+            follower.style.transform = `translate3d(${posX - 20}px, ${posY - 20}px, 0) scale(1)`;
             follower.style.backgroundColor = 'transparent';
-            cursor.style.backgroundColor = '#795548';
         });
     });
 }

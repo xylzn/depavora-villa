@@ -40,7 +40,7 @@ h1, h2, h3, .font-serif {
 /* Fixed Navbar Blur */
 .nav-blur {
     backdrop-filter: blur(12px);
-    background-color: rgba(250, 243, 224, 0.8);
+    background-color: rgba(253, 240, 213, 0.98); /* More solid cozy-cream */
 }
 
 /* Card Hover Effects */
@@ -107,6 +107,7 @@ h1, h2, h3, .font-serif {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
     scroll-padding: 0 10%; /* Helper for centering first/last items */
 }
