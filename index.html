@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa de'Pavora - Nature & Rustic Retreat</title>
+    <link rel="icon" type="image/x-icon" href="Public/src/image/Logo/De'Pavora_Logo.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for Serifs, Montserrat for Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="public/src/css/styles.css">
+</head>
+<body class="overflow-x-hidden">
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 nav-blur border-b border-rustic/10 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-bold text-rustic tracking-wider font-serif">Villa de'Pavora</div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-btn" class="md:hidden text-rustic">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-8 font-medium text-rustic uppercase text-sm tracking-widest">
+            <li><a href="#home" class="hover:text-wood transition-colors">Home</a></li>
+            <li><a href="#suites" class="hover:text-wood transition-colors">Suites</a></li>
+            <li><a href="#facilities" class="hover:text-wood transition-colors">Facilities</a></li>
+            <li><a href="#packages" class="hover:text-wood transition-colors">Packages</a></li>
+            <li><a href="#contact" class="hover:text-wood transition-colors">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center px-6">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="Public/src/image/Hero_Background/Hero_Background.png" alt="Villa Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-rustic/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl" data-aos="fade-up" data-aos-duration="1500">
+            <span class="text-cream uppercase tracking-[0.4em] text-sm mb-6 block drop-shadow-lg">Welcome to Sanctuary</span>
+            <h1 class="text-6xl md:text-8xl text-white font-bold mb-8 leading-tight drop-shadow-2xl font-serif italic">Villa De'Pavora</h1>
+            <p class="text-xl md:text-2xl text-cream/95 mb-12 font-light max-w-2xl mx-auto leading-relaxed italic drop-shadow-md">
+                Temukan harmoni antara kemewahan modern dan kehangatan kayu yang autentik. Tempat di mana alam dan kenyamanan menyatu dalam ketenangan.
+            </p>
+            <a href="https://wa.me/6287722288507" target="_blank" class="inline-block bg-wood hover:bg-wood/90 text-white px-12 py-5 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-2xl tracking-widest uppercase">
+                Reserve Your Stay
+            </a>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        
+    </section>
+
+    <!-- Suite Villa Section -->
+    <section id="suites" class="py-24 px-6 md:px-12 bg-cream">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-4xl md:text-5xl font-bold text-nature mb-4">Our Luxury Suites</h2>
+                <div class="w-24 h-1 bg-rustic mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto italic font-serif text-lg">Setiap sudut dirancang untuk memberikan kenyamanan maksimal dengan sentuhan kayu dan kehangatan alam.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Papandayan -->
+                <div class="group card-hover bg-cream rounded-2xl overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Public/src/image/Suite/Suite Papandayan.png" alt="Suite Papandayan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-rustic/20 group-hover:bg-rustic/10 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-rustic mb-2 font-serif">Suite Papandayan</h3>
+                        <p class="text-sm text-brown-600 uppercase tracking-widest">Premium Family Suite</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Puntang -->
+                <div class="group card-hover bg-cream rounded-2xl overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Public/src/image/Suite/Suite Puntang.png" alt="Suite Puntang" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-rustic/20 group-hover:bg-rustic/10 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-rustic mb-2 font-serif">Suite Puntang</h3>
+                        <p class="text-sm text-brown-600 uppercase tracking-widest">Rustic Elegance</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Maribaya -->
+                <div class="group card-hover bg-cream rounded-2xl overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Public/src/image/Suite/Suite Maribaya.png" alt="Suite Maribaya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-rustic/20 group-hover:bg-rustic/10 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-rustic mb-2 font-serif">Suite Maribaya</h3>
+                        <p class="text-sm text-brown-600 uppercase tracking-widest">Cozy Retreat</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Rinjani -->
+                <div class="group card-hover bg-cream rounded-2xl overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Public/src/image/Suite/Suite Rinjani.png" alt="Suite Rinjani" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-rustic/20 group-hover:bg-rustic/10 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-rustic mb-2 font-serif">Suite Rinjani</h3>
+                        <p class="text-sm text-brown-600 uppercase tracking-widest">Mountain View</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Malabar -->
+                <div class="group card-hover bg-cream rounded-2xl overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Public/src/image/Suite/Suite Malabar.png" alt="Suite Malabar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-rustic/20 group-hover:bg-rustic/10 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-rustic mb-2 font-serif">Suite Malabar</h3>
+                        <p class="text-sm text-brown-600 uppercase tracking-widest">Rustic Charm</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Cikuray 1 -->
+                <div class="group card-hover bg-cream rounded-2xl overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Public/src/image/Suite/Suite Cikuray 1 & 2.png" alt="Suite Cikuray 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-rustic/20 group-hover:bg-rustic/10 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-rustic mb-2 font-serif">Suite Cikuray 1</h3>
+                        <p class="text-sm text-brown-600 uppercase tracking-widest">Classic Comfort</p>
+                    </div>
+                </div>
+
+                <!-- Card 7: Cikuray 2 -->
+                <div class="group card-hover bg-cream rounded-2xl overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Public/src/image/Suite/Suite Cikuray 1 & 2.png" alt="Suite Cikuray 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-rustic/20 group-hover:bg-rustic/10 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-rustic mb-2 font-serif">Suite Cikuray 2</h3>
+                        <p class="text-sm text-brown-600 uppercase tracking-widest">Spacious Living</p>
+                    </div>
+                </div>
+
+                <!-- Card 8: Glamping Tent -->
+                <div class="group card-hover bg-cream rounded-2xl overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="Public/src/image/Suite/Glamping Tent.png" alt="Glamping Tent" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-rustic/20 group-hover:bg-rustic/10 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-rustic mb-2 font-serif">Glamping Tent</h3>
+                        <p class="text-sm text-brown-600 uppercase tracking-widest">Luxury Camping</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas Umum Section -->
+    <section id="facilities" class="py-24 px-6 md:px-12 bg-rustic text-cream relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-down">
+                <span class="text-wood uppercase tracking-[0.3em] text-sm mb-4 block">Premium Amenities</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Fasilitas Umum</h2>
+                <div class="w-24 h-1 bg-wood mx-auto mb-8"></div>
+                <p class="text-cream/80 max-w-2xl mx-auto italic font-light text-lg">Setiap fasilitas kami rancang untuk menambah kenyamanan dan kehangatan momen Anda di Villa De'Pavora.</p>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="relative group/slider">
+                <!-- Navigation Arrows (Desktop Only) -->
+                <button id="fac-prev" class="hidden lg:flex absolute left-[-60px] top-1/2 -translate-y-1/2 slider-btn opacity-0 group-hover/slider:opacity-100 transition-opacity">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="fac-next" class="hidden lg:flex absolute right-[-60px] top-1/2 -translate-y-1/2 slider-btn opacity-0 group-hover/slider:opacity-100 transition-opacity">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <!-- Cards Wrapper -->
+                <div id="fac-carousel" class="carousel-container no-scrollbar gap-6 pb-8 px-4 scroll-px-4">
+                    <!-- Facility 1 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(31%-16px)]">
+                        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-2xl card-hover">
+                            <img src="Public/src/image/Facility/Belcony.png" alt="Balcony" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-rustic via-rustic/40 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="w-12 h-px bg-wood mb-4 group-hover:w-20 transition-all duration-500"></div>
+                                <h3 class="text-2xl font-bold font-serif mb-2">Balcony / Dining Area</h3>
+                                <p class="text-sm text-cream/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Nikmati hidangan dengan pemandangan alam yang asri.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 2 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(31%-16px)]">
+                        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-2xl card-hover">
+                            <img src="Public/src/image/Facility/Meeting_Room.png" alt="Meeting Room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-rustic via-rustic/40 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="w-12 h-px bg-wood mb-4 group-hover:w-20 transition-all duration-500"></div>
+                                <h3 class="text-2xl font-bold font-serif mb-2">Meeting Room</h3>
+                                <p class="text-sm text-cream/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Ruang pertemuan eksklusif dengan suasana tenang.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 3 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(31%-16px)]">
+                        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-2xl card-hover">
+                            <img src="Public/src/image/Facility/Billiard.png" alt="Billiard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-rustic via-rustic/40 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="w-12 h-px bg-wood mb-4 group-hover:w-20 transition-all duration-500"></div>
+                                <h3 class="text-2xl font-bold font-serif mb-2">Billiard Room</h3>
+                                <p class="text-sm text-cream/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Area hiburan untuk bersantai bersama teman.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 4 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(31%-16px)]">
+                        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-2xl card-hover">
+                            <img src="Public/src/image/Facility/Fish_Pond.png" alt="Fish Pond" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-rustic via-rustic/40 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="w-12 h-px bg-wood mb-4 group-hover:w-20 transition-all duration-500"></div>
+                                <h3 class="text-2xl font-bold font-serif mb-2">Fish Pond</h3>
+                                <p class="text-sm text-cream/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Suasana gemericik air yang menenangkan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 5 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(31%-16px)]">
+                        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-2xl card-hover">
+                            <img src="Public/src/image/Facility/Communal_Kitchen.png" alt="Communal Kitchen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-rustic via-rustic/40 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="w-12 h-px bg-wood mb-4 group-hover:w-20 transition-all duration-500"></div>
+                                <h3 class="text-2xl font-bold font-serif mb-2">Communal Kitchen</h3>
+                                <p class="text-sm text-cream/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Fasilitas memasak lengkap bergaya rustic.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 6 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(31%-16px)]">
+                        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-2xl card-hover">
+                            <img src="Public/src/image/Facility/Children_Area.png" alt="Children Area" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-rustic via-rustic/40 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="w-12 h-px bg-wood mb-4 group-hover:w-20 transition-all duration-500"></div>
+                                <h3 class="text-2xl font-bold font-serif mb-2">Children Area</h3>
+                                <p class="text-sm text-cream/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Area bermain yang aman dan menyenangkan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 7 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(31%-16px)]">
+                        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-2xl card-hover">
+                            <img src="Public/src/image/Facility/Swimming_Pool.png" alt="Swimming Pool" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-rustic via-rustic/40 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="w-12 h-px bg-wood mb-4 group-hover:w-20 transition-all duration-500"></div>
+                                <h3 class="text-2xl font-bold font-serif mb-2">Swimming Pool</h3>
+                                <p class="text-sm text-cream/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Segarkan diri dengan udara pegunungan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 8 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(31%-16px)]">
+                        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-2xl card-hover">
+                            <img src="Public/src/image/Facility/Mushola.png" alt="Mushola" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-rustic via-rustic/40 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="w-12 h-px bg-wood mb-4 group-hover:w-20 transition-all duration-500"></div>
+                                <h3 class="text-2xl font-bold font-serif mb-2">Mushola</h3>
+                                <p class="text-sm text-cream/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Tempat ibadah yang tenang dan nyaman.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 9 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-12px)] lg:w-[calc(31%-16px)]">
+                        <div class="group relative h-80 rounded-2xl overflow-hidden shadow-2xl card-hover">
+                            <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80&w=600" alt="Parking Area" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-rustic via-rustic/40 to-transparent opacity-90"></div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="w-12 h-px bg-wood mb-4 group-hover:w-20 transition-all duration-500"></div>
+                                <h3 class="text-2xl font-bold font-serif mb-2">Parking Area</h3>
+                                <p class="text-sm text-cream/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Area parkir luas dan aman untuk kendaraan Anda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicator for Mobile/Tab -->
+                <div class="lg:hidden flex justify-center mt-4">
+                    <p class="text-wood text-sm italic animate-pulse flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                        Geser ke samping untuk melihat lebih banyak
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paket Section -->
+    <section id="packages" class="py-24 px-6 md:px-12 bg-brown-100/50 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <span class="text-wood uppercase tracking-[0.2em] text-sm mb-4 block">Exclusive Offers</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-rustic mb-4 font-serif italic">Pilihan Paket Menginap</h2>
+                <div class="w-24 h-1 bg-wood mx-auto mb-6"></div>
+                <p class="text-brown-700 max-w-2xl mx-auto italic text-lg">Pilih paket yang sesuai dengan kebutuhan liburan Anda bersama keluarga atau kolega.</p>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="relative group/slider">
+                <!-- Navigation Arrows (Desktop Only) -->
+                <button id="pkg-prev" class="hidden lg:flex absolute left-[-60px] top-1/2 -translate-y-1/2 slider-btn opacity-0 group-hover/slider:opacity-100 transition-opacity">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="pkg-next" class="hidden lg:flex absolute right-[-60px] top-1/2 -translate-y-1/2 slider-btn opacity-0 group-hover/slider:opacity-100 transition-opacity">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <!-- Cards Wrapper -->
+                <div id="pkg-carousel" class="carousel-container no-scrollbar gap-8 pb-8 px-4 scroll-px-4">
+                    <!-- Paket 1: Maribaya -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-16px)] lg:w-[calc(31%-22px)]">
+                        <div class="bg-cream rounded-3xl overflow-hidden shadow-lg border border-rustic/10 flex flex-col h-full card-hover">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800" alt="Paket Maribaya" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-8 flex-grow">
+                                <h3 class="text-2xl font-bold text-rustic mb-4 font-serif">Paket 1: Suite Maribaya</h3>
+                                <ul class="space-y-3 mb-8 text-brown-800">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kapasitas 2 - 4 orang</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 1 Tempat Tidur</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Wifi & Smart TV</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Sofa & Kursi Pijat</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 1 Kamar Mandi</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 pt-0 mt-auto">
+                                <div class="text-wood font-bold text-2xl mb-4 font-serif">Rp 400.000 <span class="text-sm font-sans font-normal text-brown-600">/ Hari</span></div>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="block text-center bg-rustic text-cream py-3 rounded-xl font-bold hover:bg-rustic/90 transition-colors">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket 2: Papandayan -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-16px)] lg:w-[calc(31%-22px)]">
+                        <div class="bg-cream rounded-3xl overflow-hidden shadow-lg border border-rustic/10 flex flex-col h-full card-hover">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1512918766671-ad650b9b732d?auto=format&fit=crop&q=80&w=800" alt="Paket Papandayan" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-8 flex-grow">
+                                <h3 class="text-2xl font-bold text-rustic mb-4 font-serif">Paket 2: Suite Papandayan</h3>
+                                <ul class="space-y-3 mb-8 text-brown-800 text-sm">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kapasitas 4 - 10 orang (2 Lantai)</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 2 Tempat Tidur + 4 Set Extra Bed</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Free Breakfast 4 Orang</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Ruang Keluarga, Sofa, Smart TV</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Dapur & Kamar Mandi</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 pt-0 mt-auto">
+                                <div class="text-wood font-bold text-2xl mb-4 font-serif">Rp 1.200.000 <span class="text-sm font-sans font-normal text-brown-600">/ Hari</span></div>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="block text-center bg-rustic text-cream py-3 rounded-xl font-bold hover:bg-rustic/90 transition-colors">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket 3: Rinjani -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-16px)] lg:w-[calc(31%-22px)]">
+                        <div class="bg-cream rounded-3xl overflow-hidden shadow-lg border border-rustic/10 flex flex-col h-full card-hover">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=800" alt="Paket Rinjani" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-8 flex-grow">
+                                <h3 class="text-2xl font-bold text-rustic mb-4 font-serif">Paket 3: Suite Rinjani</h3>
+                                <ul class="space-y-3 mb-8 text-brown-800 text-sm">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kapasitas 4 - 10 orang (2 Kamar)</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Free Breakfast 4 Orang + 4 Set Extra Bed</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Ruang Keluarga & Balkon</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Wifi, Sofa, Smart TV</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 pt-0 mt-auto">
+                                <div class="text-wood font-bold text-2xl mb-4 font-serif">Rp 1.000.000 <span class="text-sm font-sans font-normal text-brown-600">/ Hari</span></div>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="block text-center bg-rustic text-cream py-3 rounded-xl font-bold hover:bg-rustic/90 transition-colors">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket 4: Glamping Tent -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-16px)] lg:w-[calc(31%-22px)]">
+                        <div class="bg-cream rounded-3xl overflow-hidden shadow-lg border border-rustic/10 flex flex-col h-full card-hover">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&q=80&w=800" alt="Paket Glamping" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-8 flex-grow">
+                                <h3 class="text-2xl font-bold text-rustic mb-4 font-serif">Paket 4: Glamping Tent</h3>
+                                <ul class="space-y-3 mb-8 text-brown-800 text-sm">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kapasitas 2 - 4 orang (2 Bed)</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Free Breakfast 2 Orang + 1 Set Extra Bed</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Wifi, Sofa, Smart TV</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 1 Kamar Mandi</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 pt-0 mt-auto">
+                                <div class="text-wood font-bold text-2xl mb-4 font-serif">Rp 600.000 <span class="text-sm font-sans font-normal text-brown-600">/ Hari</span></div>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="block text-center bg-rustic text-cream py-3 rounded-xl font-bold hover:bg-rustic/90 transition-colors">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket 5: Cikuray 1 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-16px)] lg:w-[calc(31%-22px)]">
+                        <div class="bg-cream rounded-3xl overflow-hidden shadow-lg border border-rustic/10 flex flex-col h-full card-hover">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&q=80&w=800" alt="Paket Cikuray 1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-8 flex-grow">
+                                <h3 class="text-2xl font-bold text-rustic mb-4 font-serif">Paket 5: Suite Cikuray 1</h3>
+                                <ul class="space-y-3 mb-8 text-brown-800 text-sm">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kapasitas 4 - 5 orang</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 4 Tempat Tidur</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 2 Wifi, Smart TV</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kamar Mandi Luar</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 pt-0 mt-auto">
+                                <div class="text-wood font-bold text-2xl mb-4 font-serif">Rp 800.000 <span class="text-sm font-sans font-normal text-brown-600">/ Hari</span></div>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="block text-center bg-rustic text-cream py-3 rounded-xl font-bold hover:bg-rustic/90 transition-colors">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket 6: Cikuray 2 -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-16px)] lg:w-[calc(31%-22px)]">
+                        <div class="bg-cream rounded-3xl overflow-hidden shadow-lg border border-rustic/10 flex flex-col h-full card-hover">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=800" alt="Paket Cikuray 2" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-8 flex-grow">
+                                <h3 class="text-2xl font-bold text-rustic mb-4 font-serif">Paket 6: Suite Cikuray 2</h3>
+                                <ul class="space-y-3 mb-8 text-brown-800 text-sm">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kapasitas 7 - 10 orang</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 4 Tempat Tidur</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 2 Wifi, Smart TV</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kamar Mandi Luar</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 pt-0 mt-auto">
+                                <div class="text-wood font-bold text-2xl mb-4 font-serif">Rp 1.200.000 <span class="text-sm font-sans font-normal text-brown-600">/ Hari</span></div>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="block text-center bg-rustic text-cream py-3 rounded-xl font-bold hover:bg-rustic/90 transition-colors">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket 7: Puntang -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-16px)] lg:w-[calc(31%-22px)]">
+                        <div class="bg-cream rounded-3xl overflow-hidden shadow-lg border border-rustic/10 flex flex-col h-full card-hover">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&q=80&w=800" alt="Paket Puntang" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-8 flex-grow">
+                                <h3 class="text-2xl font-bold text-rustic mb-4 font-serif">Paket 7: Suite Puntang</h3>
+                                <ul class="space-y-3 mb-8 text-brown-800 text-sm">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kapasitas Maksimal 12 orang</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 2 Tempat Tidur Queen Size</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Free Extra Bed</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 pt-0 mt-auto">
+                                <div class="text-wood font-bold text-2xl mb-4 font-serif">Rp 1.700.000 <span class="text-sm font-sans font-normal text-brown-600">/ Hari</span></div>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="block text-center bg-rustic text-cream py-3 rounded-xl font-bold hover:bg-rustic/90 transition-colors">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket 8: Malabar -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-16px)] lg:w-[calc(31%-22px)]">
+                        <div class="bg-cream rounded-3xl overflow-hidden shadow-lg border border-rustic/10 flex flex-col h-full card-hover">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800" alt="Paket Malabar" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-8 flex-grow">
+                                <h3 class="text-2xl font-bold text-rustic mb-4 font-serif">Paket 8: Suite Malabar</h3>
+                                <ul class="space-y-3 mb-8 text-brown-800 text-sm">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kapasitas Maksimal 12 orang</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 2 Tempat Tidur Queen Size</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Free Extra Bed</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 pt-0 mt-auto">
+                                <div class="text-wood font-bold text-2xl mb-4 font-serif">Rp 1.700.000 <span class="text-sm font-sans font-normal text-brown-600">/ Hari</span></div>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="block text-center bg-rustic text-cream py-3 rounded-xl font-bold hover:bg-rustic/90 transition-colors">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket 9: Bundling -->
+                    <div class="carousel-item w-[85%] md:w-[calc(50%-16px)] lg:w-[calc(31%-22px)]">
+                        <div class="bg-rustic/10 rounded-3xl overflow-hidden shadow-lg border-2 border-wood/30 flex flex-col h-full card-hover">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800" alt="Paket Bundling" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-8 flex-grow">
+                                <div class="bg-wood text-cream text-xs font-bold uppercase py-1 px-3 rounded-full inline-block mb-3">Best Value for Groups</div>
+                                <h3 class="text-2xl font-bold text-rustic mb-4 font-serif">Paket 9: Bundling Suite Malabar & Puntang</h3>
+                                <ul class="space-y-3 mb-8 text-brown-800 text-sm">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Kapasitas Maksimal 24 orang</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 4 Tempat Tidur Queen Size + Free Extra Bed</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> Living Room, Sofa, Smart TV, Balkon</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-wood rounded-full mr-3"></span> 1 Kamar Mandi & 1 Dapur</li>
+                                </ul>
+                            </div>
+                            <div class="p-8 pt-0 mt-auto">
+                                <div class="text-wood font-bold text-2xl mb-4 font-serif">Rp 3.000.000 <span class="text-sm font-sans font-normal text-brown-600">/ Hari</span></div>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="block text-center bg-rustic text-cream py-3 rounded-xl font-bold hover:bg-rustic/90 transition-colors">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicator for Mobile/Tab -->
+                <div class="lg:hidden flex justify-center mt-4">
+                    <p class="text-wood text-sm italic animate-pulse flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                        Geser ke samping untuk melihat paket lainnya
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 md:px-12 bg-cream">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-4xl md:text-5xl font-bold text-nature mb-4 font-serif">Hubungi Kami</h2>
+                <div class="w-24 h-1 bg-rustic mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto italic text-lg">Siap untuk petualangan rustic Anda? Hubungi kami untuk informasi lebih lanjut atau kunjungi lokasi kami.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info & WA -->
+                <div class="bg-cream/80 p-10 rounded-3xl shadow-lg border border-rustic/10" data-aos="fade-right">
+                    <h3 class="text-3xl font-bold text-rustic mb-8 font-serif italic">Informasi Kontak</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-rustic/10 rounded-full flex items-center justify-center mr-6 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rustic" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-rustic mb-1">WhatsApp</h4>
+                                <p class="text-brown-800">+62 877 2228 8507</p>
+                                <a href="https://wa.me/6287722288507" target="_blank" class="text-wood font-semibold hover:underline mt-2 inline-block">Chat Sekarang &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-rustic/10 rounded-full flex items-center justify-center mr-6 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rustic" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-rustic mb-1">Lokasi</h4>
+                                <p class="text-brown-800">VH93+W5W, Kp Badra, Lamajang, Pangalengan, Bandung Regency, West Java 40378</p>
+                                <p class="text-sm text-brown-600 mt-1 italic">Dikelilingi udara pegunungan Pangalengan yang asri.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-rustic/10 rounded-full flex items-center justify-center mr-6 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rustic" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-rustic mb-1">Jam Operasional</h4>
+                                <p class="text-brown-800">Check-in: 14:00 WIB</p>
+                                <p class="text-brown-800">Check-out: 12:00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 p-6 bg-rustic rounded-2xl text-cream">
+                        <p class="italic font-serif text-lg mb-4 text-center">"Sempurnakan momen kebersamaan Anda di tengah alam."</p>
+                        <div class="flex justify-center space-x-4">
+                            <!-- Social Media Icons (Placeholders) -->
+                            <a href="https://instagram/depavoravilla" class="w-10 h-10 border border-cream/20 rounded-full flex items-center justify-center hover:bg-cream hover:text-rustic transition-all">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="h-full min-h-[500px] rounded-3xl overflow-hidden shadow-lg border border-rustic/10" data-aos="fade-left">
+                    <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.467323861211!2d107.5503795!3d-7.1302608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68934937595113%3A0x623651b121fb6481!2sVilla%20de&#39;Pavora%20Toriko!5e0!3m2!1sid!2sid!4v1711240000000!5m2!1sid!2sid" 
+class = "w-full h-full border-0"
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rustic py-12 px-6 md:px-12 text-center text-cream/60 border-t border-cream/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-2xl font-bold text-white mb-4 font-serif tracking-widest uppercase">Villa De'Pavora</div>
+            <p class="mb-8 max-w-md mx-auto italic font-light text-sm">"Nature and Rustic atmosphere for your perfect escape."</p>
+            <div class="w-12 h-px bg-wood/30 mx-auto mb-8"></div>
+            <div class="text-xs uppercase tracking-[0.2em]">
+                &copy; 2026 Villa De'Pavora. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-rustic/40 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar" class="fixed top-0 right-0 h-full w-[80%] max-w-[400px] bg-cream z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 p-8 flex flex-col md:hidden">
+        <div class="flex justify-between items-center mb-12">
+            <div class="text-xl font-bold text-rustic font-serif">Villa De'Pavora</div>
+            <button id="close-sidebar" class="text-rustic">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-8 text-lg font-medium tracking-[0.2em] uppercase text-rustic">
+            <a href="#home" class="sidebar-link hover:text-wood transition-colors border-b border-rustic/5 pb-4">Home</a>
+            <a href="#suites" class="sidebar-link hover:text-wood transition-colors border-b border-rustic/5 pb-4">Suites</a>
+            <a href="#facilities" class="sidebar-link hover:text-wood transition-colors border-b border-rustic/5 pb-4">Facilities</a>
+            <a href="#packages" class="sidebar-link hover:text-wood transition-colors border-b border-rustic/5 pb-4">Packages</a>
+            <a href="#contact" class="sidebar-link hover:text-wood transition-colors border-b border-rustic/5 pb-4">Contact</a>
+        </nav>
+        <div class="mt-auto pt-8 border-t border-rustic/10 text-center">
+            <p class="text-xs text-rustic/60 uppercase tracking-widest">&copy; 2026 Villa De'Pavora</p>
+        </div>
+    </div>
+
+    <!-- External JS -->
+    <script src="Public/src/js/index.js"></script>
+</body>
+</html>
